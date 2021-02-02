@@ -5,10 +5,10 @@
     <title>SHM Object-Viewer - OnePiece</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
     <script src="assign_color_JB.js" type="text/javascript"></script>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     
-    
-    
+   
     
 
 </head>
@@ -22,11 +22,9 @@
     style="color:brown";
     />
     <font size="4">
-        SHM of Canal Structure
+        Structure Health Monitoring of Waterlock
     </font>
-    <button class="sensor">
-        sensor status
-    </button>
+    
 
     <nav>
         <ul>
@@ -34,16 +32,29 @@
           <li>
             <a href="#">Sensors</a>
             <ul>
-              <li><a href="#">SensorID#1</a></li>
-              <li><a href="#">SensorID#2</a></li>
-              <li><a href="#">SensorID#3</a></li>
+              <li><a href="#" data-modal-target="#modal">SensorID#1</a></li>
+              <li><a href="#" data-modal-target="#modal">SensorID#2</a></li>
+              <li><a href="#" data-modal-target="#modal">SensorID#3</a></li>
             </ul>
           </li>
           <li><a href="#">Waterlevel</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-    
+
+      
+      <div class="modal active" id="modal">
+        <div class="modal-header">
+          <div class="title">Current status of the sensor</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          The value of the sensor is:
+          <br/> 
+          <br/>location:
+        </div>
+      </div>
+      <div id="overlay"></div>  
     
 
  
@@ -61,3 +72,4 @@
 
 </body>
 </html>
+
