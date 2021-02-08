@@ -58,7 +58,7 @@ function startConnect() {
         let  viewer = iframeElement.contentWindow.bimViewer.viewer;
 
         let dam = viewer.scene.objects["20FpTZCqJy2vhVJYtjuIce"];
-        dam.colorize = [0,0,0];
+        dam.colorize = [1,0,0];
 
         let water_left = viewer.scene.objects["2UFCi7SOP2WBqIi4NDVGdu"];
         water_left.colorize = [0,0,0];
