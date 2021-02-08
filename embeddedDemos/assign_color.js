@@ -61,11 +61,11 @@ function startConnect() {
         dam.colorize = [1,0,0];
 
         let water_left = viewer.scene.objects["2UFCi7SOP2WBqIi4NDVGdu"];
-        water_left.colorize = [0,0,0];
-
+        water_left.colorize = [0,1,0];
+        water_left.opacity = 1;
         let water_mid = viewer.scene.objects["0In9GSkUj0kAjvuqTrNojT"];
         water_mid.colorize = [0,0,0];
-
+        water_mid.opacity = 1;
         let water_right = viewer.scene.objects["1F0JmpnczAEgnqFNgI92m6"];
         water_right.colorize = [1,0,0];
         water_right.opacity = 1;
