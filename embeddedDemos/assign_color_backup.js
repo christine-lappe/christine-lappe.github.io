@@ -14,75 +14,6 @@ let client = new Paho.MQTT.Client(host, Number(port), clientID);
 
 console.log("test no func");
 
-<<<<<<< Updated upstream
-/*function myFuncTine(){
-    console.log("test");    
-    // get metaObjects
-
-    // create csv 
-    let json = metaObjects.items;
-    let fields = Object.keys(json[0]);
-    let replacer = function(key, value) { return value === null ? '' : value };
-    let csv = json.map(function(row){
-        return fields.map(function(fieldName){
-            return JSON.stringify(row[fieldName], replacer)
-        }).join(',')
-    });
-    csv.unshift(fields.join(',')); // add header column
-     csv = csv.join('\r\n');
-    console.log(csv);
-
-    // get csv file back
-    let csvarray = [];
-    let client = new XMLHttpRequest();
-    client.open('GET', '/docs/Test.csv');
-    client.onreadystatechange = function() {
-        let rows = client.responseText.split('\n');
-        for(let i = 0; i < rows.length; i++){
-            csvarray.push(rows[i].split(','));
-        }
-    }
-    client.send();
-    console.log(csvarray);
-}*/
-
-/*
---- faulty interval function from prof---
-
-function loadMonitor() {
-    return window.setInterval( function() {
-        // try{
-        const iframeBaseURL = "./../app/index.html?projectId=WaterLock";
-        let iframeElement = document.getElementById("embeddedViewer");
-        if (!iframeElement) {
-            throw "IFRAME not found";
-        }
-       
-        let viewer = iframeElement.contentWindow.bimViewer;
-        // is the model loaded?
-        if (viewer.isModelLoaded("design")){
-            console.log("loading completed");
-            // attention: Hard coded model name!!! ('design'), please change for other models or make parameter for function
-            console.log(`model loaded is ${viewer.isModelLoaded("design")} ${window.loadMonitorID}`);
-            csvFile();
-            // console.log(`model loaded is ${viewer.isModelLoaded("design")} ${window.loadMonitorID}`)
-
-            // remove the interval 
-            window.clearInterval(window.loadMonitorID)    
-        }
-        else
-        {
-            console.log('waiting to load model....')
-        }
-        // }
-        // catch {
-        
-        // }
-    }, 3000 );
-};
-------------------
-*/
-=======
 let message_from_mqtt = "fortest"; //--> from Gary, necessary?
 
 //var csvContent; 
@@ -194,7 +125,6 @@ function changeDefaultColors(objArray){
         }
     })
 }
->>>>>>> Stashed changes
 
 function startConnect() {
 // Generate a random client ID
@@ -351,40 +281,6 @@ function startDisconnect() {
         if (!iframeElement) {
             throw "IFRAME not found";
         }
-<<<<<<< Updated upstream
-        iframeElement.src = iframeBaseURL;
-
-        const objectIdsUsed = {};
-
-        window.changeColorByMQTT = function (checkbox) {
-
-                console.log(checkbox)
-                viewer = iframeElement.contentWindow.bimViewer.viewer;
-
-                console.log(viewer.metaScene.metaObjects["12NjfiY$5BWxO3cGvRvhMM"])
-
-                //var obj = viewer.scene.components[entity.id];
-                var obj = viewer.scene.objects["12NjfiY$5BWxO3cGvRvhMM"];
-                var res= obj.colorize = [1,0,0] ;
-                for (selObj in viewer.scene.selectedObjects ){
-
-                    console.log(selObj, obj);
-
-                    viewer.scene.selectedObjects[selObj].colorize = [1,0,0];
-                    viewer.scene.selectedObjects[selObj].selected = false; 
-                };
-                //teapotMesh.visible = false; -->
-             //   material = new PhongMaterial(scene, {
-             //       id: "myMaterial",
-             //       diffuse: [0.2, 0.2, 1.0]
-             //   })
-             //   var teapotMaterial = viewer.scene.components["myMaterial"];
-                var material = obj.material;
-              //  teapotMesh.material = teapotMaterial;
-                ///material.diffuse = [1,0,0]; // Change to red
-                //obj.material = material;
-                obj.meshes[0]._color=[1,0,0,0];
-=======
     
         let viewer = iframeElement.contentWindow.bimViewer; 
         // is the model loaded?
@@ -407,7 +303,7 @@ function startDisconnect() {
             console.log("loading failed") 
         } else {
             console.log('waiting to load model....')
->>>>>>> Stashed changes
+
         }
         window.selectObject = function (checkbox) {
 
